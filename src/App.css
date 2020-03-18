@@ -23,6 +23,29 @@ h1 {
   text-align: center;
 }
 
+/* 设置通用样式 */
+
+.App {
+  margin: 20px;
+
+  display: flex;
+}
+
+.App .item {
+  flex: 1;
+  max-height: 600px;
+  overflow: scroll;
+  border: 1px solid #e17b77;
+  position: relative;
+}
+
+.App .item h1 {
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+}
+/* 设置时间轴样式 */
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -30,11 +53,10 @@ h1 {
   position: relative;
 }
 
-
 /* 竖线的实现 */
 .timeline::after {
   background-color: #e17b77;
-  content: "";
+  content: '';
   position: absolute;
   left: calc(50% - 2px);
   width: 4px;
@@ -59,7 +81,7 @@ h1 {
 .timeline-item-content {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   max-width: 70%;
   width: 400px;
   display: flex;
@@ -77,7 +99,7 @@ h1 {
 
 /* 小三角的实现 */
 .timeline-item-content::after {
-  content: "";
+  content: '';
   background-color: #fff;
   width: 15px;
   height: 15px;
@@ -85,13 +107,13 @@ h1 {
   position: absolute;
   right: -7.5px;
   top: calc(50% - 7.5px);
-  box-shadow: 1px -1px 1px rgba(0, 0, 0, .2);
+  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content::after {
   right: auto;
   left: -7.5px;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, .2);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-item-content .tag {
@@ -151,8 +173,7 @@ h1 {
   left: -40px;
 }
 
-@media only screen and (max-width:767px) {
-
+@media only screen and (max-width: 767px) {
   .timeline-item-content,
   .timeline-item:nth-child(odd) .timeline-item-content {
     padding: 15px 10px;
